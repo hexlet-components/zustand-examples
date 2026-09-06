@@ -1,0 +1,20 @@
+{
+  "name": "@hexlet/zustand-examples",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r run build",
+    "lint": "oxlint . && oxfmt --check .",
+    "lint:fix": "oxfmt . && oxlint --fix .",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "oxfmt": "^0.66.0",
+    "oxlint": "^1.81.0"
+  },
+  "engines": {
+    "node": ">=26"
+  },
+  "packageManager": "pnpm@11.25.0"
+}
