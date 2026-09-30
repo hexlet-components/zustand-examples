@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/oxc-project/oxc/main/npm/oxlint/configuration_schema.json",
   "plugins": [
     "typescript",
     "unicorn",
@@ -7,6 +8,7 @@
     "promise",
     "node",
     "jsdoc",
+    "jest",
     "vitest",
     "react",
     "react-perf",
@@ -16,6 +18,23 @@
   "categories": {
     "correctness": "error"
   },
+  "rules": {
+    "vitest/require-to-throw-message": "off",
+    "vitest/no-standalone-expect": "off",
+    "jest/no-standalone-expect": "off",
+    "jest/valid-expect": [
+      "error",
+      {
+        "maxArgs": 2
+      }
+    ],
+    "vitest/valid-expect": [
+      "error",
+      {
+        "maxArgs": 2
+      }
+    ]
+  },
   "env": {
     "builtin": true,
     "browser": true,
@@ -23,8 +42,12 @@
   },
   "ignorePatterns": [
     "**/node_modules/**",
+    "**/npm-cache/**",
+    "**/vendor/**",
     "**/dist/**",
-    "**/test-results/**",
-    "**/playwright-report/**"
+    "**/build/**",
+    "**/coverage/**",
+    "**/.venv/**",
+    "**/__snapshots__/**"
   ]
 }
